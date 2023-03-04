@@ -1,4 +1,4 @@
-let row = document.getElementById("rows")
+let row = document.getElementById("search-history")
 let history = localStorage.getItem("history")
 let data = JSON.parse(history)
 
@@ -8,11 +8,13 @@ let display = () =>{
         html = "No serach History"
     }else{
     data.forEach(item =>{
+        let i= 0;
         html+=`
-
+            <div id="rows">
              <div id="para">
-             <div>${data.length} ${item.title}</div>
+             <div>${i+1} ${item.title}</div>
              <div>Searched on : ${item.time}</div>
+             </div>
              </div>
         `
     })
@@ -24,5 +26,5 @@ var clearbtn = document
   .getElementById("clearbtn")
   .addEventListener("click", () => {
     var currentdata = localStorage.removeItem("history");
-    document.getElementById("rows").className = "hide";
+    row.classList.add("hide")
   });

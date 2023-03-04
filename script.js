@@ -1,5 +1,5 @@
 const input = document.querySelector('#search-input')
-const head = document.getElementsByClassName(".head")
+const head = document.getElementsByClassName("head")
 const searchBtn = document.querySelector(".search-icon")
 const cards = document.querySelector(".cards")
 let searchInput = document.getElementById("search-input")
@@ -22,7 +22,7 @@ searchBtn.addEventListener("click",book)
 const showBook = (data) => {
     let search = searchInput.value.trim()
           
-    head.innerHTML =`Book Result For ${search}`
+    head.textContent =`Book Result For ${search}`
           
     let obj ={
         date:new Date().toLocaleDateString(),

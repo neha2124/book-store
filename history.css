@@ -59,6 +59,9 @@ main section .title {
     border-radius: 10px;
     margin-right:30px;
 }
+#search-history{
+    display: contents;
+}
 #rows{
     width: 90%;
     padding: 0.8rem;
@@ -75,5 +78,5 @@ main section .title {
     justify-content: space-between;
 }
 .hide{
-    display: none;
+    display: none !important;
 }
