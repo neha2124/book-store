@@ -3,7 +3,14 @@ const head = document.getElementsByClassName(".head")
 const searchBtn = document.querySelector(".search-icon")
 const cards = document.querySelector(".cards")
 let searchInput = document.getElementById("search-input")
-let history = []
+let notes = localStorage.getItem("history");
+let history;
+if(notes == null){
+   history = []
+}else{
+  history= JSON.parse(notes)
+}
+
 function book() {
     let search = searchInput.value.trim()
     fetch(`https://www.googleapis.com/books/v1/volumes?q=${search}`)
