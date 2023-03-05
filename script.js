@@ -15,16 +15,20 @@ function book() {
     let search = searchInput.value.trim()
     fetch(`https://www.googleapis.com/books/v1/volumes?q=${search}`)
         .then(response => response.json())
-        .then(data => showBook(data.items))
+       .then(data => showBook(data.items))
+        .catch(error => (alert(error)))
+        
 }
-searchBtn.addEventListener("click",book)
+searchBtn.addEventListener("click",()=>{
+     
+      book
+})
+
 
 const showBook = (data) => {
     let search = searchInput.value.trim()
-          
-    head.textContent =`Book Result For ${search}`
-          
-    let obj ={
+          let obj ={
+            id:history.length+1,
         date:new Date().toLocaleDateString(),
         time:new Date().toLocaleDateString('en-us',{
             hour:'2-digit',

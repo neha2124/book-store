@@ -8,11 +8,12 @@ let display = () =>{
         html = "No serach History"
     }else{
     data.forEach(item =>{
-        let i= 0;
+        
+
         html+=`
             <div id="rows">
              <div id="para">
-             <div>${i+1} ${item.title}</div>
+             <div>${item.id} ${item.title}</div>
              <div>Searched on : ${item.time}</div>
              </div>
              </div>

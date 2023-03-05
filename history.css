@@ -80,3 +80,8 @@ main section .title {
 .hide{
     display: none !important;
 }
+@media(max-width:480px){
+    #para{
+       display: block;
+    }
+}
