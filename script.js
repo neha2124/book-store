@@ -10,22 +10,23 @@ if(notes == null){
 }else{
   history= JSON.parse(notes)
 }
-
 function book() {
+   
     let search = searchInput.value.trim()
     fetch(`https://www.googleapis.com/books/v1/volumes?q=${search}`)
         .then(response => response.json())
        .then(data => showBook(data.items))
         .catch(error => (alert(error)))
-        
 }
 searchBtn.addEventListener("click",()=>{
      
-      book
+      book()
 })
 
 
 const showBook = (data) => {
+    
+    
     let search = searchInput.value.trim()
           let obj ={
             id:history.length+1,
@@ -40,7 +41,7 @@ const showBook = (data) => {
     }
     history.push(obj)
     localStorage.setItem("history",JSON.stringify(history))
-    console.log(history)
+    
     let html = "";
     data.forEach(item => {
         
@@ -61,6 +62,7 @@ const showBook = (data) => {
         `
     })
     cards.innerHTML = html
+
 }
 input.addEventListener('keyup', function (e) {
     if (e.key == 'Enter') {
